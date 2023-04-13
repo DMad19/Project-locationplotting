@@ -4,21 +4,24 @@
     <title>OpenStreetMap Example</title>
     <link rel="stylesheet" href="https://openlayers.org/en/v6.6.1/css/ol.css" type="text/css">
     <script src="https://openlayers.org/en/v6.6.1/build/ol.js"></script>
+    <link rel="stylesheet" href="./style.css">
   </head>
-  <body>
-    <form id="reasonSelect">
-      <input type="radio" name="reason" id="good studies">
-      <label for="good studies">good studies</label>
-      <input type="radio" name="reason" id="good placements">
-      <label for="good placements">good placements</label>
-      <input type="radio" name="reason" id="brand or reputation">
-      <label for="brand or reputation">brand or reputation</label>
-      <input type="radio" name="reason" id="near to home">
-      <label for="near to home">near to home</label>
-      <input type="radio" name="reason" id="good sports">
-      <label for="good sports">good sports</label>
-    </form>
-    <div id="map" style="width: 100%; height: 770px;"></div>
+  <body style="background-color:thistle;">
+    <div class="container">
+      <form id="reasonSelect">
+        <input type="radio" name="reason" id="good studies">
+        <label for="good studies">good studies</label>
+        <input type="radio" name="reason" id="good placements">
+        <label for="good placements">good placements</label>
+        <input type="radio" name="reason" id="brand or reputation">
+        <label for="brand or reputation">brand or reputation</label>
+        <input type="radio" name="reason" id="near to home">
+        <label for="near to home">near to home</label>
+        <input type="radio" name="reason" id="good sports">
+        <label for="good sports">good sports</label>
+      </form>
+    </div>
+    <div id="map" style="width: 100%; height: 730px; border: 2px solid black"></div>
     <script src="./script.js"></script>    
   </body>
 </html>

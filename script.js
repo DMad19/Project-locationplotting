@@ -33,23 +33,7 @@ var map = new ol.Map({
       layer.getSource().clear();
     });
     let reason = e.target.id
-    // if(e.target.id=='good studies'){
-    //   reason = 'good studies'
-    // }
-    // else if(e.target.id=='good placements'){
-    //   reason = 'good placements'
-    // }
-    // else if(e.target.id=='brand or reputation'){
-    //   reason = 'brand or reputation'
-    // }
-    // else if(e.target.id=='near to home'){
-    //   reason = 'near to home'
-    // }
-    // else{
-    //   reason = 'good sports'
-    // }
     for(let i=0;i<students.length;i++){
-      console.log(i)
         if(students[i].reason==reason){
           const searchQuery = students[i].place;
           const apiEndpoint = "https://nominatim.openstreetmap.org/search";
