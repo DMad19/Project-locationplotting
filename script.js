@@ -5,12 +5,13 @@ class student{
   }
 }
 const reasonS = document.querySelector('#reasonSelect')
-let a = new student('good studies','Chikkaballapura')
-let b = new student('good placements','Dharmavaram')
-let c = new student('brand or reputation','Bengaluru')
-let d = new student('near to home','Devanahalli')
-let e = new student('good sports','Dharmavaram')
-let students = [a,b,c,d,e]
+let a = new student('Good Academics','Chikkaballapura')
+let b = new student('Good Placements','Dharmavaram')
+let c = new student('Reputation or Brand','Bengaluru')
+let d = new student('Near to Home','Devanahalli')
+let e = new student('Sports Facilities','Dharmavaram')
+let f = new student('Good Infrastructure or Facilities','Bagepalli')
+let students = [a,b,c,d,e,f]
 var lng =  77.72881;
 var lat = 13.39505;
 var map = new ol.Map({
