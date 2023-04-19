@@ -4,14 +4,21 @@ class student{
     this.place = place
   }
 }
+let studentObjs = []
+fetch('studentDataForm.xlsx')
+.then(response => response.arrayBuffer())
+.then(data => {
+  const workbook = XLSX.read(data, { type: 'array' });
+  const sheetName = workbook.SheetNames[0];
+  const worksheet = workbook.Sheets[sheetName];
+  data = XLSX.utils.sheet_to_json(worksheet);
+  data.forEach(row=>{
+    let a = new student(row['Why did you join this college?'],row['Location'])
+    studentObjs.push(a)
+  })
+})
+.catch(error => console.error(error));
 const reasonS = document.querySelector('#reasonSelect')
-let a = new student('Good Academics','Chikkaballapura')
-let b = new student('Good Placements','Dharmavaram')
-let c = new student('Reputation or Brand','Bengaluru')
-let d = new student('Near to Home','Devanahalli')
-let e = new student('Sports Facilities','Dharmavaram')
-let f = new student('Good Infrastructure or Facilities','Bagepalli')
-let students = [a,b,c,d,e,f]
 var lng =  77.72881;
 var lat = 13.39505;
 var map = new ol.Map({
@@ -27,16 +34,16 @@ var map = new ol.Map({
     })
   });
   
-  var markers = [  {lat:13.4355, lng:  77.73158},  {lat: 13.39205,  lng: 77.86416},  {lat: 13.7832,  lng: 77.7963},  {lat: 13.2476, lng: 77.7114}];
+  var markers = [];
   reasonS.addEventListener('click',(e)=>{
     var layers = map.getLayers().getArray();
     layers.forEach(function(layer) {
       layer.getSource().clear();
     });
     let reason = e.target.id
-    for(let i=0;i<students.length;i++){
-        if(students[i].reason==reason){
-          const searchQuery = students[i].place;
+    for(let i=0;i<studentObjs.length;i++){
+        if(studentObjs[i].reason==reason){
+          const searchQuery = studentObjs[i].place;
           const apiEndpoint = "https://nominatim.openstreetmap.org/search";
         fetch(`${apiEndpoint}?q=${searchQuery}&format=json`)  
         .then(response => response.json())

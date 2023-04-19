@@ -4,6 +4,7 @@
     <title>OpenStreetMap Example</title>
     <link rel="stylesheet" href="https://openlayers.org/en/v6.6.1/css/ol.css" type="text/css">
     <script src="https://openlayers.org/en/v6.6.1/build/ol.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
     <link rel="stylesheet" href="./style.css">
   </head>
   <body style="background-color:thistle;">
@@ -21,6 +22,8 @@
         <label for="Reputation or Brand">Reputation or Brand</label>
         <input type="radio" name="reason" id="Good Infrastructure or Facilities">
         <label for="Good Infrastructure or Facilities">Good Infrastructure or Facilities</label>
+        <input type="radio" name="reason" id="CET">
+        <label for="CET">CET</label>
       </form>
     </div>
     <div id="map" style="width: 100%; height: 730px; border: 2px solid black"></div>
