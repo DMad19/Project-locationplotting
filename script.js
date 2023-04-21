@@ -19,7 +19,6 @@ fetch('studentDataForm.xlsx')
   })
 })
 .catch(error => console.error(error));
-console.log(studentObjs)
 const reasonS = document.querySelector('#reasonSelect')
 var lng =  77.72881;
 var lat = 13.39505;
