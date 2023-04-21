@@ -13,11 +13,13 @@ fetch('studentDataForm.xlsx')
   const worksheet = workbook.Sheets[sheetName];
   data = XLSX.utils.sheet_to_json(worksheet);
   data.forEach(row=>{
-    let a = new student(row['Why did you join this college?'],row['Location'])
+    let reasons =row['Why did you join this college?'].split(',')
+    let a = new student(reasons,row['Location'])
     studentObjs.push(a)
   })
 })
 .catch(error => console.error(error));
+console.log(studentObjs)
 const reasonS = document.querySelector('#reasonSelect')
 var lng =  77.72881;
 var lat = 13.39505;
@@ -42,7 +44,14 @@ var map = new ol.Map({
     });
     let reason = e.target.id
     for(let i=0;i<studentObjs.length;i++){
-        if(studentObjs[i].reason==reason){
+        let flag = 0
+        for(let j=0;j<studentObjs[i].reason.length;j++){
+          if(studentObjs[i].reason[j]==reason){
+            flag = 1
+            break
+          } 
+        }
+        if(flag){
           const searchQuery = studentObjs[i].place;
           const apiEndpoint = "https://nominatim.openstreetmap.org/search";
         fetch(`${apiEndpoint}?q=${searchQuery}&format=json`)  
