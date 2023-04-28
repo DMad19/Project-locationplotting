@@ -119,7 +119,8 @@ var map = new ol.Map({
 		analysiscont.textContent = ''
 		for(let i=0;i<keys.length;i++){
 			if(dictionary[keys[i]].length!=0){
-				let heading = document.createElement('h1')
+				let heading = document.createElement('h2')
+        heading.className = 'heading'
 				heading.textContent = keys[i] + ":"
 				analysiscont.append(heading)
 				let uniques = removeDuplicates(dictionary[keys[i]])
