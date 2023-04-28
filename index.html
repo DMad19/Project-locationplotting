@@ -7,26 +7,31 @@
     <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
     <link rel="stylesheet" href="./style.css">
   </head>
-  <body style="background-color:thistle;">
+  <body style="background-image: url('./background.jpg');">
     <div class="container">
       <form id="reasonSelect">
-        <input type="radio" name="reason" id="Good Academics">
+        <input type="checkbox" name="reason" id="Good Academics">
         <label for="Good Academics">Good Academics</label>
-        <input type="radio" name="reason" id="Good Placements">
+        <input type="checkbox" name="reason" id="Good Placements">
         <label for="Good Placements">Good Placements</label>
-        <input type="radio" name="reason" id="Sports Facilities">
+        <input type="checkbox" name="reason" id="Sports Facilities">
         <label for="Sports Facilities">Sports Facilities</label>
-        <input type="radio" name="reason" id="Near to Home">
+        <input type="checkbox" name="reason" id="Near to Home">
         <label for="Near to Home">Near to Home</label>
-        <input type="radio" name="reason" id="Reputation or Brand">
+        <input type="checkbox" name="reason" id="Reputation or Brand">
         <label for="Reputation or Brand">Reputation or Brand</label>
-        <input type="radio" name="reason" id="Good Infrastructure or Facilities">
+        <input type="checkbox" name="reason" id="Good Infrastructure or Facilities">
         <label for="Good Infrastructure or Facilities">Good Infrastructure or Facilities</label>
-        <input type="radio" name="reason" id="CET">
+        <input type="checkbox" name="reason" id="CET">
         <label for="CET">CET</label>
       </form>
     </div>
-    <div id="map" style="width: 100%; height: 730px; border: 2px solid black"></div>
+	<div class="mapanalysis">
+		<div id="map" style=" width: 80%; height: 730px; border: 2px solid black"></div>
+		<div class="analysisCont">
+
+		</div>
+	</div>
     <script src="./script.js"></script>    
   </body>
 </html>

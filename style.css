@@ -1,3 +1,7 @@
+body{
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 .container{
     display: flex;
     flex-direction: row;
@@ -5,4 +9,20 @@
     justify-content: center;
     margin-top:20px;
     margin-bottom: 10px;
+}
+#reasonSelect{
+    background-color: darkgrey;
+    padding: 20px;
+}
+.mapanalysis{
+    display:flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.analysisCont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 0;
+    color: aliceblue;
 }
